@@ -1,3 +1,3 @@
-var worker = require('./lib/worker');
+var worker = require('./lib/zeromq/worker');
 
 worker.init();
