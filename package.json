@@ -8,5 +8,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "winston": "^2.3.1",
+    "zmq": "^2.15.3"
+  }
 }
