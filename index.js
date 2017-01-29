@@ -1,14 +1,18 @@
-var worker = require('./lib/zeromq/worker');
+var worker = require('./lib/zeromq/worker')
+  , winston = require('winston');
 
 var index = exports;
 
+index.worker = worker;
+
 index.init = function () {
-  var bindingTarget = process.env.bindingTarget;
-  if (!bindingTarget) {
-    throw new Error("Please spesify your binding target via bindingTarget environment variable");
+  var address = process.env.MQ_ADDRESS;
+  if (!address) {
+    winston.log('info', "Please, you should spesify 'MQ_ADDRESS' ENV VARIABLE.")
+    process.exit(1);
   }
 
-  worker.init(bindingTarget);
+  index.worker.init(address);
 };
 
 index.init();
