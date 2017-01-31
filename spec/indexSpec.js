@@ -1,5 +1,8 @@
 describe("Index module", function () {
     process.env.MQ_ADDRESS = "tcp://127.0.0.1:3000";
+    var config = require('../config');
+    const _constants = require('../constants');
+    config.mq.type = _constants.mq_type.ZERO_MQ;
 
     var mock = {};
     mock.worker = (function () {
@@ -10,7 +13,6 @@ describe("Index module", function () {
         return obj;
     })();
 
-    const _constants = require('../lib/constants');
     var _index = require('../index');
 
     var index,

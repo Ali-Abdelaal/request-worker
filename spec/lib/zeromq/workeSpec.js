@@ -19,7 +19,7 @@ describe("worker module", function () {
         return obj;
     })();
 
-    const _constants = require('../../../lib/constants');
+    const _constants = require('../../../constants');
     var _zmq = require('zmq')
         , _winston = require('winston')
         , _worker = require('../../../lib/zeromq/worker');

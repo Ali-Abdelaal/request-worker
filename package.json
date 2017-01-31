@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "amqplib": "^0.5.1",
     "target-resolver": "git+https://github.com/Ali-Abdelaal/url-resolver.git",
     "winston": "^2.3.1",
     "zmq": "^2.15.3"
