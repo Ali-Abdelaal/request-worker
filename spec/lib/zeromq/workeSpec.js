@@ -1,4 +1,4 @@
-describe("worker module", function () {
+describe("zmq worker module", function () {
 
     var mock = {};
     mock.socket = (function () {
