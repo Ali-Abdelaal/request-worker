@@ -9,15 +9,12 @@ var index = exports;
 index.worker = worker;
 
 index.init = function () {
-  // SET In configuration ?
-  var address = process.env.MQ_ADDRESS;
-
-  if (!address) {
+  if (!config.mq.address) {
     winston.log('info', "Please, you should spesify 'MQ_ADDRESS' ENV VARIABLE.")
     process.exit(1);
   }
 
-  index.worker.init(address);
+  index.worker.init(config.mq.address);
 };
 
 index.init();

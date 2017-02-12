@@ -40,10 +40,9 @@ describe("Index module", function () {
         });
 
         it('should handle MQ_ADDRESS not exists error', function () {
-            process.env.MQ_ADDRESS = undefined;
-            // IT ALSO Call worker.init ??
+            config.mq.address = undefined;
 
-            spyOn(process, 'exit').and.callThrough();
+            spyOn(process, 'exit');
             index.init();
             expect(process.exit).toHaveBeenCalled();
         });

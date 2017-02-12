@@ -99,4 +99,22 @@ describe("zmq worker module", function () {
         });
     });
 
+    describe("buildReply function", function () {
+        it('should be exist', function () {
+            expect(!!worker.buildReply).toBe(true);
+        });
+
+        it('should be build valid reply', function () {
+            var resultObj = {
+                target: 'target',
+                isUp: 'isUp'
+            };
+
+            var expectedResult = JSON.stringify(resultObj);
+
+            var result = worker.buildReply('target', 'isUp');
+            expect(result).toEqual(expectedResult);
+        });
+    });
+
 });
